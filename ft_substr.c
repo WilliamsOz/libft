@@ -6,11 +6,11 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 14:22:31 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 18:59:53 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 12:15:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" // modifier pour que la chaine s'arrete et ne malloc pas trop
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

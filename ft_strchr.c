@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 13:33:35 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 11:26:29 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 12:37:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	ptrs = (char*)s;
 	while (ptrs[i] != '\0')
 	{
-		if (ptrs[i] == c)
+		if ((unsigned char)ptrs[i] == (unsigned char)c)
 			return (ptrs + i);
 		else
 			i++;

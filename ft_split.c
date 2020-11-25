@@ -6,11 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 15:03:21 by user42            #+#    #+#             */
-/*   Updated: 2020/11/19 15:53:03 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 12:14:47 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// ajouter une fonction pour free en cas d'erreur de malloc
 
 static int		get_size(char const *s, char c, int size)
 {

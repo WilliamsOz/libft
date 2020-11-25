@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 13:43:08 by user42            #+#    #+#             */
-/*   Updated: 2020/09/21 11:37:32 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 12:38:21 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	while (ptrs[i] != '\0')
 	{
-		if (ptrs[i] == c)
+		if ((unsigned char)ptrs[i] == (unsigned char)c)
 			last_occ = i;
 		i++;
 	}
