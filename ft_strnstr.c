@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 18:40:46 by user42            #+#    #+#             */
-/*   Updated: 2020/11/23 18:41:20 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 09:54:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ char			*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-#
