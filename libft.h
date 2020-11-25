@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 14:46:23 by user42            #+#    #+#             */
-/*   Updated: 2020/09/22 11:31:40 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 18:32:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+size_t				ft_strlen(const char *s);
 int					ft_atoi(const char *nptr);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
-size_t				ft_strlen(const char *s);
 void				ft_bzero(void *s, size_t n);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);

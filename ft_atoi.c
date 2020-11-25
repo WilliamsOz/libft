@@ -6,31 +6,33 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 19:02:03 by user42            #+#    #+#             */
-/*   Updated: 2020/11/25 17:20:51 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 19:13:37 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
-int		ft_atoi(const char *nptr)
+int			ft_atoi(const char *nptr)
 {
-	long	res;
+	int		i;
+	int		res;
 	int		sign;
 
 	sign = 1;
 	res = 0;
-	while ((*nptr >= '\t' && *nptr <= '\r') || *nptr == ' ')
-		nptr++;
-	if (*nptr == '+' || *nptr == '-')
+	i = 0;
+	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		if (*nptr == '-')
+		if (nptr[i] == '-')
 			sign *= -1;
-		nptr++;
+		i++;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		res = res * 10 + (*nptr - '0');
-		nptr++;
+		res = res * 10 + (nptr[i] - '0');
+		i++;
 	}
-	return ((int)res * sign);
+	return (res * sign);
 }
