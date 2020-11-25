@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 19:02:03 by user42            #+#    #+#             */
-/*   Updated: 2020/11/23 17:33:35 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 17:20:51 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 int		ft_atoi(const char *nptr)
 {
-	int		res;
+	long	res;
 	int		sign;
-	int		i;
 
-	i = 0;
 	sign = 1;
 	res = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	while ((*nptr >= '\t' && *nptr <= '\r') || *nptr == ' ')
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (nptr[i] == '-')
+		if (*nptr == '-')
 			sign *= -1;
-		i++;
+		nptr++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		res = res * 10 + (nptr[i] - '0');
-		i++;
+		res = res * 10 + (*nptr - '0');
+		nptr++;
 	}
-	return (res * sign);
+	return ((int)res * sign);
 }
