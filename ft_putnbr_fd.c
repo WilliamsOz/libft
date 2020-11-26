@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 13:32:17 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 01:33:40 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/26 02:07:30 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static long		ft_intlen(long nbr)
 {
-	int i;
-	long len;
+	int		i;
+	long	len;
 
 	i = 1;
 	len = 1;
@@ -53,6 +53,6 @@ void			ft_putnbr_fd(int n, int fd)
 		res[i] = ('0' + ((nbr / cc) % 10));
 		write(fd, &res[i], 1);
 		cc /= 10;
-		i++; 
+		i++;
 	}
 }

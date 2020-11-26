@@ -6,11 +6,11 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 14:50:46 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 02:05:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/26 02:07:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" // ne pas faire d'index -1
+#include "libft.h"
 
 static int		ft_is_charset(char c, const char *charset)
 {
