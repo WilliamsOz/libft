@@ -6,27 +6,53 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 13:32:17 by user42            #+#    #+#             */
-/*   Updated: 2020/09/16 13:41:15 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/26 01:33:40 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+static long		ft_intlen(long nbr)
 {
-	long nbr;
+	int i;
+	long len;
+
+	i = 1;
+	len = 1;
+	while (nbr >= 10)
+	{
+		nbr /= 10;
+		i++;
+	}
+	while (--i > 0)
+		len *= 10;
+	return (len);
+}
+
+void			ft_putnbr_fd(int n, int fd)
+{
+	char	res[10];
+	long	nbr;
+	int		i;
+	long	cc;
 
 	nbr = n;
+	i = -1;
+	cc = 0;
+	while (++i < 10)
+		res[i] = '\0';
 	if (nbr < 0)
 	{
-		ft_putchar_fd('-', fd);
+		write(fd, "-", 1);
 		nbr *= -1;
 	}
-	if (nbr > 9)
+	i = 0;
+	cc = ft_intlen(nbr);
+	while (cc > 0)
 	{
-		ft_putnbr_fd((nbr / 10), fd);
-		ft_putnbr_fd((nbr % 10), fd);
+		res[i] = ('0' + ((nbr / cc) % 10));
+		write(fd, &res[i], 1);
+		cc /= 10;
+		i++; 
 	}
-	else
-		ft_putchar_fd((nbr % 10 + '0'), fd);
 }

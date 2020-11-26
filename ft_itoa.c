@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 15:37:56 by user42            #+#    #+#             */
-/*   Updated: 2020/09/22 10:42:30 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/26 01:54:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,14 @@ char			*ft_itoa(int n)
 		n_l *= -1;
 	}
 	size = ft_intlen(n_l);
-	sign == 1 ? size++ : size + 0;
+	if (sign == 1)
+		size++;
 	if (!(nbr = (char*)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	nbr[size] = '\0';
-	sign == 1 ? ft_itoa_neg(n_l, nbr) : ft_itoa_pos(n_l, nbr);
+	if (sign == 1)
+		nbr = ft_itoa_neg(n_l, nbr);
+	else
+		nbr = ft_itoa_pos(n_l, nbr);
 	return (nbr);
 }
