@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 14:50:46 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 02:07:06 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/26 02:18:35 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,21 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	copy;
 
+	size = 0;
 	if (s1 == NULL)
 		return (NULL);
 	i = 0;
 	while (ft_is_charset(s1[i], set) == 1)
 		i++;
-	size = ft_strlen(s1) - 1;
-	while (ft_is_charset(s1[size], set) == 1 && size > 0)
+	while (s1[size] != '\0')
+		size++;
+	while (size > 0 && ft_is_charset(s1[size], set) == 1)
 		size--;
 	if (!(new_str = (char*)malloc(sizeof(char) * ((i + size) + 1))))
 		return (NULL);
 	new_str[i + size] = '\0';
 	copy = 0;
 	while (i < size + 1)
-	{
-		new_str[copy] = s1[i];
-		i++;
-		copy++;
-	}
+		new_str[copy++] = s1[i++];
 	return (new_str);
 }
